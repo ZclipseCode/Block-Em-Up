@@ -10,9 +10,13 @@ public class PlayerInputScript : MonoBehaviour
     [SerializeField] Transform block;
     bool movePressed;
 
+    Block blockScript;
+    bool clockwiseReady;
+    bool counterClockwiseReady;
+
     void Start()
     {
-        
+        blockScript = GetComponent<Block>();
     }
 
     void Update()
@@ -31,11 +35,32 @@ public class PlayerInputScript : MonoBehaviour
         {
             movePressed = true;
         }
+
+        if (clockwiseReady)
+        {
+            blockScript.RotateClockwise();
+            clockwiseReady = false;
+        }
+        if (counterClockwiseReady)
+        {
+            blockScript.RotateCounterClockwise();
+            counterClockwiseReady = false;
+        }
     }
 
     public void HorizontalMove(InputAction.CallbackContext context)
     {
         horizontalMovement = context.ReadValue<float>();
         movePressed = true;
+    }
+
+    public void RotateClockwise(InputAction.CallbackContext context)
+    {
+        clockwiseReady = context.action.triggered;
+    }
+
+    public void RotateCounterClockwise(InputAction.CallbackContext context)
+    {
+        counterClockwiseReady = context.action.triggered;
     }
 }
