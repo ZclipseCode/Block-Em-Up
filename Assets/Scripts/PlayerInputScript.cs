@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerInputScript : MonoBehaviour
 {
     float horizontalMovement;
-    [SerializeField] Transform block;
+    GameObject block;
+    //[SerializeField] Transform block;
     bool movePressed;
 
     Block blockScript;
@@ -16,35 +17,40 @@ public class PlayerInputScript : MonoBehaviour
 
     void Start()
     {
-        blockScript = GetComponent<Block>();
+        //blockScript = GetComponent<Block>();
     }
 
     void Update()
     {
-        if (movePressed && horizontalMovement == 1)
-        {
-            transform.position = new Vector2(transform.position.x + block.transform.localScale.x, transform.position.y);
-            movePressed = false;
-        }
-        else if (movePressed && horizontalMovement == -1)
-        {
-            transform.position = new Vector2(transform.position.x - block.transform.localScale.x, transform.position.y);
-            movePressed = false;
-        }
-        else if (horizontalMovement == 0)
-        {
-            movePressed = true;
-        }
+        block = GameObject.FindGameObjectWithTag("Block");
 
-        if (clockwiseReady)
+        if (block != null)
         {
-            blockScript.RotateClockwise();
-            clockwiseReady = false;
-        }
-        if (counterClockwiseReady)
-        {
-            blockScript.RotateCounterClockwise();
-            counterClockwiseReady = false;
+            if (movePressed && horizontalMovement == 1)
+            {
+                block.transform.position = new Vector2(block.transform.position.x + block.transform.localScale.x, block.transform.position.y);
+                movePressed = false;
+            }
+            else if (movePressed && horizontalMovement == -1)
+            {
+                block.transform.position = new Vector2(block.transform.position.x - block.transform.localScale.x, block.transform.position.y);
+                movePressed = false;
+            }
+            else if (horizontalMovement == 0)
+            {
+                movePressed = true;
+            }
+
+            if (clockwiseReady)
+            {
+                block.GetComponent<Block>().RotateClockwise();
+                clockwiseReady = false;
+            }
+            if (counterClockwiseReady)
+            {
+                block.GetComponent<Block>().RotateCounterClockwise();
+                counterClockwiseReady = false;
+            }
         }
     }
 

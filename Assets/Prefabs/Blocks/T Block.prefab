@@ -10,11 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5953387437131818269}
   - component: {fileID: 7645646433114577976}
-  - component: {fileID: 1037588693}
-  - component: {fileID: 1037588692}
   m_Layer: 0
   m_Name: T Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +34,7 @@ Transform:
   - {fileID: 3432004452936880771}
   - {fileID: 1096882828667459733}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7645646433114577976
 MonoBehaviour:
@@ -52,105 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleFactor: 0.4
   fallSpeed: 1.5
---- !u!114 &1037588693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8610872265504975978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 7039b7b26cc8b5e4c93b11609686bb48, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1037588692}
-        m_TargetAssemblyTypeName: PlayerInputScript, Assembly-CSharp
-        m_MethodName: HorizontalMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 1050937a-b5e3-4d04-9f27-c368155c4d2a
-    m_ActionName: Player/Horizontal Movement
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1037588692}
-        m_TargetAssemblyTypeName: PlayerInputScript, Assembly-CSharp
-        m_MethodName: RotateClockwise
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 127bed89-c291-43e4-8bd7-d4ccddc0f5f6
-    m_ActionName: Player/Rotate Clockwise
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1037588692}
-        m_TargetAssemblyTypeName: PlayerInputScript, Assembly-CSharp
-        m_MethodName: RotateCounterClockwise
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 201082b7-c197-4f43-9f61-b042d56c82a7
-    m_ActionName: Player/Rotate Counter-Clockwise
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7603b3a3-89c2-4640-a967-631b10ee1c0c
-    m_ActionName: Player/Slow Drop
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a63d9685-ee99-470a-a377-59233590fae9
-    m_ActionName: Player/Instant Drop
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Xbox Controller
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &1037588692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8610872265504975978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829753b848f7d804e8f15658d0337af3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  block: {fileID: 5953387437131818269}
 --- !u!1001 &540226496799214069
 PrefabInstance:
   m_ObjectHideFlags: 0
