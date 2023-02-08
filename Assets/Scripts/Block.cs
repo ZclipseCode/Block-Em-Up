@@ -10,7 +10,7 @@ public class Block : MonoBehaviour
 
     void Start()
     {
-        gameObject.transform.localScale *= scaleFactor;
+        //gameObject.transform.localScale *= scaleFactor;
     }
 
     void Update()

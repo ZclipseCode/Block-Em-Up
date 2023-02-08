@@ -8,16 +8,16 @@ public class PlayerInputScript : MonoBehaviour
 {
     float horizontalMovement;
     GameObject block;
-    //[SerializeField] Transform block;
     bool movePressed;
-
-    Block blockScript;
     bool clockwiseReady;
     bool counterClockwiseReady;
 
+    bool inRightBoundary = false;
+    bool inLeftBoundary = false;
+
     void Start()
     {
-        //blockScript = GetComponent<Block>();
+
     }
 
     void Update()
@@ -26,12 +26,12 @@ public class PlayerInputScript : MonoBehaviour
 
         if (block != null)
         {
-            if (movePressed && horizontalMovement == 1)
+            if (movePressed && horizontalMovement == 1 && !inRightBoundary)
             {
                 block.transform.position = new Vector2(block.transform.position.x + block.transform.localScale.x, block.transform.position.y);
                 movePressed = false;
             }
-            else if (movePressed && horizontalMovement == -1)
+            else if (movePressed && horizontalMovement == -1 && !inLeftBoundary)
             {
                 block.transform.position = new Vector2(block.transform.position.x - block.transform.localScale.x, block.transform.position.y);
                 movePressed = false;
@@ -68,5 +68,15 @@ public class PlayerInputScript : MonoBehaviour
     public void RotateCounterClockwise(InputAction.CallbackContext context)
     {
         counterClockwiseReady = context.action.triggered;
+    }
+
+    public void RightBoundary()
+    {
+        inRightBoundary = !inRightBoundary;
+    }
+
+    public void LeftBoundary()
+    {
+        inLeftBoundary = !inLeftBoundary;
     }
 }
