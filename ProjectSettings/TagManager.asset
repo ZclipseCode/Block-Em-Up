@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Block
+  - Boundary
+  - Grid
+  - Preview
+  - Input
   layers:
   - Default
   - TransparentFX

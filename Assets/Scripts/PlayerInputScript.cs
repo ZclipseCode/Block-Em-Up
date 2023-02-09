@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputScript : MonoBehaviour
 {
     float horizontalMovement;
-    GameObject block;
+    GameObject piece;
     bool movePressed;
     bool clockwiseReady;
     bool counterClockwiseReady;
@@ -22,18 +22,18 @@ public class PlayerInputScript : MonoBehaviour
 
     void Update()
     {
-        block = GameObject.FindGameObjectWithTag("Block");
+        piece = GameObject.FindGameObjectWithTag("Piece");
 
-        if (block != null)
+        if (piece != null)
         {
             if (movePressed && horizontalMovement == 1 && !inRightBoundary)
             {
-                block.transform.position = new Vector2(block.transform.position.x + block.transform.localScale.x, block.transform.position.y);
+                piece.transform.position = new Vector2(piece.transform.position.x + piece.transform.localScale.x, piece.transform.position.y);
                 movePressed = false;
             }
             else if (movePressed && horizontalMovement == -1 && !inLeftBoundary)
             {
-                block.transform.position = new Vector2(block.transform.position.x - block.transform.localScale.x, block.transform.position.y);
+                piece.transform.position = new Vector2(piece.transform.position.x - piece.transform.localScale.x, piece.transform.position.y);
                 movePressed = false;
             }
             else if (horizontalMovement == 0)
@@ -43,12 +43,12 @@ public class PlayerInputScript : MonoBehaviour
 
             if (clockwiseReady)
             {
-                block.GetComponent<Block>().RotateClockwise();
+                piece.GetComponent<Block>().RotateClockwise();
                 clockwiseReady = false;
             }
             if (counterClockwiseReady)
             {
-                block.GetComponent<Block>().RotateCounterClockwise();
+                piece.GetComponent<Block>().RotateCounterClockwise();
                 counterClockwiseReady = false;
             }
         }
