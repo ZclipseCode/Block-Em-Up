@@ -5,12 +5,12 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     [SerializeField] float scaleFactor;
-    public float fallSpeed;
+    [SerializeField] float fallSpeed;
     float elapsedTime;
 
     void Start()
     {
-        //gameObject.transform.localScale *= scaleFactor;
+
     }
 
     void Update()
@@ -34,4 +34,9 @@ public class Block : MonoBehaviour
     {
         transform.rotation *= Quaternion.Euler(0, 0, 90);
     }
+
+    //public float GetScaleFactor()
+    //{
+    //    return scaleFactor;
+    //}
 }
