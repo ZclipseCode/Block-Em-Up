@@ -54,6 +54,14 @@ public class Block : MonoBehaviour
         {
             transform.rotation *= Quaternion.Euler(0, 0, -90);
         }
+        else
+        {
+            transform.position = new Vector2(transform.position.x - transform.localScale.x, transform.position.y);
+            
+            cwValid = true;
+
+            RotateClockwise();
+        }
     }
 
     public void RotateCounterClockwise()
@@ -61,6 +69,14 @@ public class Block : MonoBehaviour
         if (ccwValid)
         {
             transform.rotation *= Quaternion.Euler(0, 0, 90);
+        }
+        else
+        {
+            transform.position = new Vector2(transform.position.x + transform.localScale.x, transform.position.y);
+
+            ccwValid = true;
+
+            RotateCounterClockwise();
         }
     }
 }
