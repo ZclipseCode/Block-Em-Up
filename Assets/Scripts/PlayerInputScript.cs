@@ -79,4 +79,14 @@ public class PlayerInputScript : MonoBehaviour
     {
         inLeftBoundary = !inLeftBoundary;
     }
+
+    public bool GetClockwiseReady()
+    {
+        return clockwiseReady;
+    }
+
+    public bool GetCounterClockwiseReady()
+    {
+        return counterClockwiseReady;
+    }
 }

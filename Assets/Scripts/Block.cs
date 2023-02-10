@@ -8,9 +8,14 @@ public class Block : MonoBehaviour
     [SerializeField] float fallSpeed;
     float elapsedTime;
 
+    bool cwValid = true;
+    bool ccwValid = true;
+    SpriteRenderer grid;
+    [SerializeField] SpriteRenderer blockBounds;
+
     void Start()
     {
-
+        grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -23,15 +28,39 @@ public class Block : MonoBehaviour
 
             elapsedTime = 0;
         }
+
+        if (transform.position.x + blockBounds.bounds.size.x > grid.bounds.size.x / 2)
+        {
+            cwValid = false;
+        }
+        else
+        {
+            cwValid = true;
+        }
+
+        if (transform.position.x - blockBounds.bounds.size.x / 2 < -grid.bounds.size.x / 2)
+        {
+            ccwValid = false;
+        }
+        else
+        {
+            ccwValid = true;
+        }
     }
 
     public void RotateClockwise()
     {
-        transform.rotation *= Quaternion.Euler(0, 0, -90);
+        if (cwValid)
+        {
+            transform.rotation *= Quaternion.Euler(0, 0, -90);
+        }
     }
 
     public void RotateCounterClockwise()
     {
-        transform.rotation *= Quaternion.Euler(0, 0, 90);
+        if (ccwValid)
+        {
+            transform.rotation *= Quaternion.Euler(0, 0, 90);
+        }
     }
 }
