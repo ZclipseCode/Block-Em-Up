@@ -168,13 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pieces:
-  - {fileID: 9217823773156263124, guid: c27b8ebccdeb4634b9a08be432d72403, type: 3}
-  - {fileID: 2928813593353186436, guid: eabd3428bf14d1443aaed0017a8e5898, type: 3}
-  - {fileID: 7419492615980513774, guid: b3bbdad3a986ab046a4b05f0f1f5d4a9, type: 3}
-  - {fileID: 2404309757978661113, guid: 391404a6ba5bcec44bb2174b00061181, type: 3}
   - {fileID: 3696505138489442846, guid: de3f79afacd24ab429329b8565ee3dbb, type: 3}
-  - {fileID: 8610872265504975978, guid: f53da9a343260f64cbcb512bb8a28914, type: 3}
-  - {fileID: 917447870432431217, guid: 1a2aabd073bfa174eabc78efb5b5f34b, type: 3}
 --- !u!1 &596167416
 GameObject:
   m_ObjectHideFlags: 0
