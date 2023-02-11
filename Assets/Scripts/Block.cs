@@ -13,6 +13,9 @@ public class Block : MonoBehaviour
     SpriteRenderer grid;
     [SerializeField] SpriteRenderer blockBounds;
 
+    [Header("Specific Blocks")]
+    [SerializeField] bool isJ;
+
     void Start()
     {
         grid = GameObject.FindGameObjectWithTag("Grid").GetComponent<SpriteRenderer>();
@@ -56,11 +59,22 @@ public class Block : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector2(transform.position.x - transform.localScale.x, transform.position.y);
-            
-            cwValid = true;
+            if (isJ)
+            {
+                transform.position = new Vector2(transform.position.x - (transform.localScale.x * 2), transform.position.y);
 
-            RotateClockwise();
+                cwValid = true;
+
+                RotateClockwise();
+            }
+            else
+            {
+                transform.position = new Vector2(transform.position.x - transform.localScale.x, transform.position.y);
+
+                cwValid = true;
+
+                RotateClockwise();
+            }
         }
     }
 
